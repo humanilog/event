@@ -1,0 +1,14 @@
+view_event_form
+<?xml version="1.0"?>
+<openerp>
+    <data>
+      <record model="ir.ui.view" id="view_event_form">
+          <field name="name">event.event.team.form</field>
+          <field name="model">event.event</field>
+          <field name="inherit_id">event.view_event_form</field>
+          <field name="arch">
+
+          </field>
+      </record>
+    </data>
+</openerp>
