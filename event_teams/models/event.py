@@ -8,10 +8,11 @@ from openerp import api, fields, models, _
 class EventEvent(models.Model):
     _inherit = 'event.event'
 
+    is_team_event = fields.Boolean(string=_('Team Event'))
     team_min = fields.Integer(string=_('Minimum Teams'))
     team_max = fields.Integer(string=_('Maximum Teams'))
-    team_attendee_min = fields.Integer(string=_('Minimum Attendees / Teams'))
-    team_attendee_max = fields.Integer(string=_('Maximum Attendees / Teams'))
+    team_attendee_min = fields.Integer(string=_('Minimum Attendees/Team'))
+    team_attendee_max = fields.Integer(string=_('Maximum Attendees/Team'))
 
 
 class EventTeam(models.Model):
