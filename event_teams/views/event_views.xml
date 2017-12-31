@@ -2,13 +2,23 @@ view_event_form
 <?xml version="1.0"?>
 <openerp>
     <data>
-      <record model="ir.ui.view" id="view_event_form">
-          <field name="name">event.event.team.form</field>
-          <field name="model">event.event</field>
-          <field name="inherit_id">event.view_event_form</field>
-          <field name="arch">
-
-          </field>
+        <record model="ir.ui.view" id="view_event_form">
+            <field name="name">event.event.team.form</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id">event.view_event_form</field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Teams" attrs="{'invisible': [('is_team_event', '=', True)]}">
+                        <field name="team_min"/>
+                        <field name="team_max"/>
+                        <field name="team_attendee_min"/>
+                        <field name="team_attendee_max"/>
+                    </page>
+                </notebook>
+                <field name="show_menue" position="after">
+                    <field name="is_team_event"/>
+                </field>
+            </field>            
       </record>
     </data>
 </openerp>
